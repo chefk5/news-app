@@ -12,9 +12,14 @@ This app utilizes [news api](https://newsapi.org/) and display the latest news. 
 
 ### Limitations
 
-- UI can be a bit intimidating
+- UI can be improved
 - No tests where added
+- No ID added to list elements
 
+
+### Technologies used
+
+Vite, Typescript, React Redux toolkit, RTK query, React router dom, Chakra-ui
 
 ## Getting Started
 
