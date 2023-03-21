@@ -1,37 +1,24 @@
-![reactjs-vite-tailwindcss-boilerplate](https://user-images.githubusercontent.com/16243531/217138979-b854309c-4742-4275-a705-f9fec5158217.jpg)
+# news-app
 
-# React Tailwindcss Boilerplate build with Vite
+This app utilizes [news api](https://newsapi.org/) and display the latest news. You can alos search for news.
 
-This is a boilerplate build with Vite, React 18, TypeScript, Vitest, Testing Library, TailwindCSS 3, Eslint and Prettier.
+### How does the app work?
 
-## What is inside?
+- Enter you email and api key in the login page (details on how to obtain them are in the login page).
+- You will be directed to main page where you will see the latest news
+- you can search for news
+- you can click on a news item to show it in another screen
+- You can change your name, token and email in profile page
 
-This project uses many tools like:
+### Limitations
 
-- [Vite](https://vitejs.dev)
-- [ReactJS](https://reactjs.org)
-- [TypeScript](https://www.typescriptlang.org)
-- [Vitest](https://vitest.dev)
-- [Testing Library](https://testing-library.com)
-- [Tailwindcss](https://tailwindcss.com)
-- [Eslint](https://eslint.org)
-- [Prettier](https://prettier.io)
+- UI can be a bit intimidating
+- No tests where added
+
 
 ## Getting Started
 
 ### Install
-
-Create the project.
-
-```bash
-npx degit joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate my-app
-```
-
-Access the project directory.
-
-```bash
-cd my-app
-```
 
 Install dependencies.
 
@@ -78,4 +65,4 @@ pnpm run test:ui
 ## License
 
 This project is licensed under the MIT License.
-# news-app
+
