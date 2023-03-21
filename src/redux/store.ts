@@ -1,24 +1,22 @@
 import { configureStore } from '@reduxjs/toolkit'
-import newsReducer from './newsSlice'
-import storage from 'redux-persist/lib/storage'
-import { setupListeners } from '@reduxjs/toolkit/query'
-import { newsApi } from '../services/news'
 import {
-  persistStore,
-  persistReducer,
   FLUSH,
-  REHYDRATE,
   PAUSE,
   PERSIST,
+  persistReducer,
   PURGE,
-  REGISTER
+  REGISTER,
+  REHYDRATE
 } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+import { newsApi } from '../services/news'
+import newsReducer from './newsSlice'
 const persistConfig = {
   key: 'newsReducer',
   storage
-  //whitelist: ['newsReducer'] // list of reducers to persist
 }
 
+//store for both reducers plus redux-persist configuration
 const persistedReducer = persistReducer(persistConfig, newsReducer)
 
 export const store = configureStore({
@@ -34,9 +32,5 @@ export const store = configureStore({
     }).concat(newsApi.middleware)
 })
 
-// setupListeners(store.dispatch)
-
-// Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch

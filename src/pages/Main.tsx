@@ -20,6 +20,8 @@ function Main() {
   const [searchTerm, setSearchTerm] = useState<string>('')
   const [isMainNewsShowing, setIsMainNewsShowing] = useState<boolean>(true)
   const token = useSelector((state: RootState) => state.newsReducer.token)
+
+  //rtk queries to fetch latest news and searched news
   const {
     data: latestData,
     error: latestError,
@@ -30,6 +32,7 @@ function Main() {
     { data: termData, error: termError, isLoading: termLoading }
   ] = useLazyGetSearchedNewsQuery()
 
+  //if there is something written trigger the query and search for news
   const handleSearch = async () => {
     if (searchTerm != '') {
       await setIsMainNewsShowing(false)
@@ -37,6 +40,7 @@ function Main() {
     }
   }
 
+  //handler for enter button
   const handleKeyPress = (event: { key: string }) => {
     if (event.key === 'Enter' && searchTerm != '') {
       handleSearch()
@@ -62,6 +66,8 @@ function Main() {
             Search
           </Button>
         </InputGroup>
+
+        {/* different list when searching for latest or searched news */}
         {isMainNewsShowing && (
           <ArticlesList
             isMainNewsShowing={isMainNewsShowing}

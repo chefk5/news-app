@@ -19,6 +19,7 @@ const Profile = () => {
     token: state.newsReducer.token
   }))
 
+  //get form data and send them to redux
   const [formData, setFormData] = useState<FormData>({
     name: name,
     email: email,

@@ -18,6 +18,7 @@ const initialState: IinitialState = {
   news: []
 }
 
+//new sslice to mainly used for users credentials
 export const newsSlice = createSlice({
   name: 'newsSlice',
   initialState,

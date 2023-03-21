@@ -18,10 +18,10 @@ const Login = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
+  //if email and token are valid save them to redux store and navigate to main page
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     if (email.length > 0 && apiToken.length > 5) {
-      console.log('login')
       dispatch(saveCredentials({ email: email, token: apiToken }))
       navigate('/main')
     }

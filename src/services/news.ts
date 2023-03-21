@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { InewsAPIResponse } from 'app/interfaces'
 
+//queries for latest and searched news
 export const newsApi = createApi({
   reducerPath: 'newsApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://newsapi.org/v2/' }),
