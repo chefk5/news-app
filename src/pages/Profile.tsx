@@ -3,7 +3,7 @@ import { FormLabel, FormControl, Input, Button, Box } from '@chakra-ui/react'
 import { useSelector, useDispatch } from 'react-redux'
 import { saveProfileValues } from 'redux/newsSlice'
 import { RootState } from 'redux/store'
-
+import { useToast } from '@chakra-ui/react'
 interface FormData {
   name: string
   email: string
@@ -11,6 +11,8 @@ interface FormData {
 }
 
 const Profile = () => {
+  const toast = useToast()
+
   const { name, email, token } = useSelector((state: RootState) => ({
     name: state.newsReducer.name,
     email: state.newsReducer.email,
@@ -31,8 +33,14 @@ const Profile = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     dispatch(saveProfileValues(formData))
-
-    // Handle form submission here
+    toast({
+      position: 'top',
+      title: 'Settings saved!',
+      description: "We've saved your settings successfully",
+      status: 'success',
+      duration: 3000,
+      isClosable: true
+    })
   }
 
   return (

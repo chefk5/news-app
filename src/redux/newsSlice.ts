@@ -19,7 +19,7 @@ const initialState: IinitialState = {
 }
 
 export const newsSlice = createSlice({
-  name: 'counter',
+  name: 'newsSlice',
   initialState,
   reducers: {
     saveCredentials: (state, action: PayloadAction<Icredentials>) => {
@@ -29,17 +29,15 @@ export const newsSlice = createSlice({
     },
     logout: (state) => {
       state.isLoggedIn = false
-      console.log(state)
+      state.email = ''
+      state.token = ''
+      state.name = ''
     },
     saveProfileValues: (state, action: PayloadAction<Iprofile>) => {
-      console.log(action.payload)
       state.name = action.payload.name
       state.email = action.payload.email
       state.token = action.payload.token
     }
-    // incrementByAmount: (state, action: PayloadAction<number>) => {
-    //   state.value += action.payload
-    // }
   }
 })
 

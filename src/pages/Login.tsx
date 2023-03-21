@@ -1,43 +1,31 @@
-import { useState } from 'react'
 import {
+  Box,
+  Button,
   FormControl,
   FormLabel,
   Input,
-  Button,
-  Box,
-  Text,
-  Link
+  Link,
+  Text
 } from '@chakra-ui/react'
-import { useSelector, useDispatch } from 'react-redux'
-import { saveCredentials } from 'redux/newsSlice'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { saveCredentials } from 'redux/newsSlice'
 
 const Login = () => {
-  const [email, setEmail] = useState('')
-  const [apiToken, setApiToken] = useState('')
-  //   const [isButtonDisabled, setIsButtonDisabled] = useState(true)
+  const [email, setEmail] = useState<string>('')
+  const [apiToken, setApiToken] = useState<string>('')
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     if (email.length > 0 && apiToken.length > 5) {
       console.log('login')
       dispatch(saveCredentials({ email: email, token: apiToken }))
-      navigate('/main') // Navigate to the "Home" screen
+      navigate('/main')
     }
-    // Do something with the email and API token
   }
-
-  //   const handleInputChange = (event: { target: { name: any; value: any } }) => {
-  //     const { name, value } = event.target
-  //     if (name === 'email') {
-  //       setEmail(value)
-  //     } else if (name === 'apiToken') {
-  //       setApiToken(value)
-  //     }
-  //     setIsButtonDisabled(!email || !apiToken)
-  //   }
 
   return (
     <Box width="400px" mx="auto" mt="8">

@@ -18,7 +18,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route element={<ProtectedRoutes isLoggedIn={isLoggedIn} />}>
           <Route path="/main" element={<Main />} />
-          <Route path="/story" element={<Story />} />
+          <Route path="/story/:type/:term?" element={<Story />} />
           <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>
