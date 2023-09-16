@@ -1,19 +1,19 @@
 # news-app
 
-This app utilizes [news api](https://newsapi.org/) and display the latest news. You can alos search for news.
+This app utilizes [news api](https://newsapi.org/) and displays the latest news. You can also search for news. Please obtain an api key for logging in to the app. You have to run the app locally to fetch news.
 
 ### How does the app work?
 
-- Enter you email and api key in the login page (details on how to obtain them are in the login page).
-- You will be directed to main page where you will see the latest news
+- Enter your email and API key on the login page (details on how to obtain them are on the login page).
+- You will be directed to the main page where you will see the latest news
 - you can search for news
-- you can click on a news item to show it in another screen
-- You can change your name, token and email in profile page
+- you can click on a news item to show it on another screen
+- You can change your name, token, and email in the profile page
 
 ### Limitations
 
 - UI can be improved
-- No tests where added
+- No tests were added
 - No ID added to list elements
 
 
